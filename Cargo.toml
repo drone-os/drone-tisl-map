@@ -1,0 +1,53 @@
+cargo-features = ["resolver"]
+
+[workspace]
+members = [
+    "svd",
+    "src/pieces",
+    "src/pieces/1",
+    "src/pieces/2",
+    "src/pieces/3",
+    "src/pieces/4",
+    "src/pieces/5",
+    "src/pieces/6",
+    "src/pieces/7",
+    "src/pieces/8",
+    "src/pieces/9",
+    "src/pieces/10",
+    "src/pieces/11",
+    "src/pieces/12",
+]
+
+[package]
+name = "drone-tisl-map"
+version = "0.12.0"
+authors = ["Valentine Valyaeff <valentine.valyaeff@gmail.com>"]
+edition = "2018"
+resolver = "2"
+exclude = ["/svd_files"]
+repository = "https://github.com/drone-os/drone-tisl-map"
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+description = """
+Texas Instruments SimpleLink™ peripheral mappings for Drone, an Embedded
+Operating System.
+"""
+
+[badges]
+maintenance = { status = "experimental" }
+
+[features]
+default = []
+std = ["drone-core/std", "drone-cortexm/std"]
+
+[dependencies.drone-core]
+version = "0.12.0"
+path = "../drone-core"
+
+[dependencies.drone-cortexm]
+version = "0.12.0"
+path = "../drone-cortexm"
+
+[dependencies.drone-tisl-map-pieces]
+version = "=0.12.0"
+path = "src/pieces"

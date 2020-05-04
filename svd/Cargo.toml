@@ -1,0 +1,21 @@
+cargo-features = ["resolver"]
+
+[package]
+name = "drone-tisl-map-svd"
+version = "0.12.0"
+authors = ["Valentine Valyaeff <valentine.valyaeff@gmail.com>"]
+edition = "2018"
+resolver = "2"
+repository = "https://github.com/drone-os/drone-tisl-map"
+license = "MIT OR Apache-2.0"
+description = """
+Texas Instruments SimpleLink™ SVD to bindings for Drone, an Embedded Operating
+System.
+"""
+
+[dependencies.drone-svd]
+version = "0.12.0"
+path = "../../drone-svd"
+
+[dependencies]
+anyhow = "1"
