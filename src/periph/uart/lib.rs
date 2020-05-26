@@ -26,24 +26,24 @@ periph! {
             OE { RoRwRegFieldBit }
         }
         RSR {
-            0x20 RwReg;
-            FE { RoRwRegFieldBit }
-            PE { RoRwRegFieldBit }
-            BE { RoRwRegFieldBit }
-            OE { RoRwRegFieldBit }
+            0x20 RoReg;
+            FE { RoRoRegFieldBit }
+            PE { RoRoRegFieldBit }
+            BE { RoRoRegFieldBit }
+            OE { RoRoRegFieldBit }
         }
         ECR {
-            0x20 RwReg;
-            DATA { WoRwRegFieldBits }
+            0x20 WoReg;
+            DATA { WoWoRegFieldBits }
         }
         FR {
-            0x20 RwReg;
-            CTS { RoRwRegFieldBit }
-            BUSY { RoRwRegFieldBit }
-            RXFE { RoRwRegFieldBit }
-            TXFF { RoRwRegFieldBit }
-            RXFF { RoRwRegFieldBit }
-            TXFE { RoRwRegFieldBit }
+            0x20 RoReg;
+            CTS { RoRoRegFieldBit }
+            BUSY { RoRoRegFieldBit }
+            RXFE { RoRoRegFieldBit }
+            TXFF { RoRoRegFieldBit }
+            RXFF { RoRoRegFieldBit }
+            TXFE { RoRoRegFieldBit }
         }
         ILPR {
             0x20 RwReg;
@@ -101,47 +101,47 @@ periph! {
             LME5IM { RwRwRegFieldBit }
         }
         RIS {
-            0x20 RwReg;
-            RXRIS { RoRwRegFieldBit }
-            TXRIS { RoRwRegFieldBit }
-            RTRIS { RoRwRegFieldBit }
-            FERIS { RoRwRegFieldBit }
-            PERIS { RoRwRegFieldBit }
-            BERIS { RoRwRegFieldBit }
-            OERIS { RoRwRegFieldBit }
-            NINEBITRIS { RoRwRegFieldBit }
-            LMSBRIS { RoRwRegFieldBit }
-            LME1RIS { RoRwRegFieldBit }
-            LME5RIS { RoRwRegFieldBit }
+            0x20 RoReg;
+            RXRIS { RoRoRegFieldBit }
+            TXRIS { RoRoRegFieldBit }
+            RTRIS { RoRoRegFieldBit }
+            FERIS { RoRoRegFieldBit }
+            PERIS { RoRoRegFieldBit }
+            BERIS { RoRoRegFieldBit }
+            OERIS { RoRoRegFieldBit }
+            NINEBITRIS { RoRoRegFieldBit }
+            LMSBRIS { RoRoRegFieldBit }
+            LME1RIS { RoRoRegFieldBit }
+            LME5RIS { RoRoRegFieldBit }
         }
         MIS {
-            0x20 RwReg;
-            RXMIS { RoRwRegFieldBit }
-            TXMIS { RoRwRegFieldBit }
-            RTMIS { RoRwRegFieldBit }
-            FEMIS { RoRwRegFieldBit }
-            PEMIS { RoRwRegFieldBit }
-            BEMIS { RoRwRegFieldBit }
-            OEMIS { RoRwRegFieldBit }
-            NINEBITMIS { RoRwRegFieldBit }
-            LMSBMIS { RoRwRegFieldBit }
-            LME1MIS { RoRwRegFieldBit }
-            LME5MIS { RoRwRegFieldBit }
+            0x20 RoReg;
+            RXMIS { RoRoRegFieldBit }
+            TXMIS { RoRoRegFieldBit }
+            RTMIS { RoRoRegFieldBit }
+            FEMIS { RoRoRegFieldBit }
+            PEMIS { RoRoRegFieldBit }
+            BEMIS { RoRoRegFieldBit }
+            OEMIS { RoRoRegFieldBit }
+            NINEBITMIS { RoRoRegFieldBit }
+            LMSBMIS { RoRoRegFieldBit }
+            LME1MIS { RoRoRegFieldBit }
+            LME5MIS { RoRoRegFieldBit }
 
         }
         ICR {
-            0x20 RwReg;
-            RXIC { WoRwRegFieldBit }
-            TXIC { WoRwRegFieldBit }
-            RTIC { WoRwRegFieldBit }
-            FEIC { WoRwRegFieldBit }
-            PEIC { WoRwRegFieldBit }
-            BEIC { WoRwRegFieldBit }
-            OEIC { WoRwRegFieldBit }
-            NINEBITIC { WoRwRegFieldBit }
-            LMSBIC { WoRwRegFieldBit }
-            LME1IC { WoRwRegFieldBit }
-            LME5IC { WoRwRegFieldBit }
+            0x20 WoReg;
+            RXIC { WoWoRegFieldBit }
+            TXIC { WoWoRegFieldBit }
+            RTIC { WoWoRegFieldBit }
+            FEIC { WoWoRegFieldBit }
+            PEIC { WoWoRegFieldBit }
+            BEIC { WoWoRegFieldBit }
+            OEIC { WoWoRegFieldBit }
+            NINEBITIC { WoWoRegFieldBit }
+            LMSBIC { WoWoRegFieldBit }
+            LME1IC { WoWoRegFieldBit }
+            LME5IC { WoWoRegFieldBit }
         }
         DMACTL {
             0x20 RwReg;
@@ -155,12 +155,12 @@ periph! {
             BLEN { RwRwRegFieldBits }
         }
         LSS {
-            0x20 RwReg;
-            TSS { RoRwRegFieldBits }
+            0x20 RoReg;
+            TSS { RoRoRegFieldBits }
         }
         LTIM {
-            0x20 RwReg;
-            TIMER { RoRwRegFieldBits }
+            0x20 RoReg;
+            TIMER { RoRoRegFieldBits }
         }
         NINEBITADDR {
             0x20 RwReg;
@@ -173,8 +173,8 @@ periph! {
             RANGE { RoRwRegFieldBits }
         }
         PP {
-            0x20 RwReg;
-            NB { RoRwRegFieldBit }
+            0x20 RoReg;
+            NB { RoRoRegFieldBit }
         }
         CC {
             0x20 RwReg;

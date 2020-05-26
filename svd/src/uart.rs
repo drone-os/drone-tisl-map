@@ -1,7 +1,7 @@
 //! UART peripheral patches.
 
 use anyhow::Result;
-use drone_svd::Device;
+use drone_svd::{Access, Device};
 
 /// Remove reserved fields, because these fields have no purpose.
 pub fn remove_reserved(dev: &mut Device) -> Result<()> {
@@ -78,5 +78,26 @@ pub fn remove_reserved(dev: &mut Device) -> Result<()> {
     dev.periph("UART1").reg("ECR").remove_field("Reserved24");
     dev.periph("UART1").reg("RSR").remove_field("Reserved28");
     dev.periph("UART1").reg("DR").remove_field("Reserved20");
+
+    dev.periph("UART0").reg("RSR").access = Some(Access::ReadOnly);
+    dev.periph("UART0").reg("ECR").access = Some(Access::WriteOnly);
+    dev.periph("UART0").reg("FR").access = Some(Access::ReadOnly);
+    dev.periph("UART0").reg("RIS").access = Some(Access::ReadOnly);
+    dev.periph("UART0").reg("MIS").access = Some(Access::ReadOnly);
+    dev.periph("UART0").reg("ICR").access = Some(Access::WriteOnly);
+    dev.periph("UART0").reg("LSS").access = Some(Access::ReadOnly);
+    dev.periph("UART0").reg("LTIM").access = Some(Access::ReadOnly);
+    dev.periph("UART0").reg("PP").access = Some(Access::ReadOnly);
+
+    dev.periph("UART1").reg("RSR").access = Some(Access::ReadOnly);
+    dev.periph("UART1").reg("ECR").access = Some(Access::WriteOnly);
+    dev.periph("UART1").reg("FR").access = Some(Access::ReadOnly);
+    dev.periph("UART1").reg("RIS").access = Some(Access::ReadOnly);
+    dev.periph("UART1").reg("MIS").access = Some(Access::ReadOnly);
+    dev.periph("UART1").reg("ICR").access = Some(Access::WriteOnly);
+    dev.periph("UART1").reg("LSS").access = Some(Access::ReadOnly);
+    dev.periph("UART1").reg("LTIM").access = Some(Access::ReadOnly);
+    dev.periph("UART1").reg("PP").access = Some(Access::ReadOnly);
+
     Ok(())
 }
