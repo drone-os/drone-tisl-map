@@ -16,6 +16,7 @@ members = [
     "src/pieces/10",
     "src/pieces/11",
     "src/pieces/12",
+    "src/periph/uart",
 ]
 
 [package]
@@ -39,6 +40,7 @@ maintenance = { status = "experimental" }
 [features]
 default = []
 std = ["drone-core/std", "drone-cortexm/std"]
+uart = ["drone-tisl-map-periph-uart"]
 
 [dependencies.drone-core]
 version = "0.12.0"
@@ -51,3 +53,8 @@ path = "../drone-cortexm"
 [dependencies.drone-tisl-map-pieces]
 version = "=0.12.0"
 path = "src/pieces"
+
+[dependencies.drone-tisl-map-periph-uart]
+version = "=0.12.0"
+path = "src/periph/uart"
+optional = true
