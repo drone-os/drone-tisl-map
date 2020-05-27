@@ -38,7 +38,7 @@ fn svd_config() -> Result<Config<'static>> {
 fn svd_deserialize() -> Result<Device> {
     drone_svd::rerun_if_env_changed();
     match env::var("CARGO_CFG_TISL_MCU")?.as_ref() {
-        "cc2538" => parse_svd("cc2538.svd"),
+        "cc2538" => parse_svd("cc2538sf53.svd"),
         _ => bail!("invalid `tisl_mcu` cfg flag"),
     }
 }
