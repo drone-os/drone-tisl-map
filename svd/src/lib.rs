@@ -7,6 +7,7 @@
 #![allow(clippy::doc_markdown)]
 #![allow(clippy::missing_errors_doc)]
 
+pub mod tim;
 pub mod uart;
 
 pub use anyhow::{bail, Result};
@@ -47,6 +48,7 @@ fn svd_deserialize() -> Result<Device> {
 
 fn patch_cc2538(mut dev: Device) -> Result<Device> {
     uart::remove_reserved(&mut dev)?;
+    tim::remove_reserved(&mut dev)?;
     Ok(dev)
 }
 
