@@ -570,6 +570,112 @@ periph! {
             FC { RwRwRegFieldBits }
         }
     }
+
+    RFCORE_SFR {
+        RFDATA {
+            0x20 RwReg;
+            RFD { RwRwRegFieldBits }
+        }
+        RFERRF {
+            0x20 RwReg;
+            NLOCK { RwRwRegFieldBit }
+            RXABO { RwRwRegFieldBit }
+            RXOVERF { RwRwRegFieldBit }
+            RXUNDERF { RwRwRegFieldBit }
+            TXOVERF { RwRwRegFieldBit }
+            TXUNDERF { RwRwRegFieldBit }
+            STROBEERR { RwRwRegFieldBit }
+        }
+        RFIRQF1 {
+            0x20 RwReg;
+            TXACKDONE { RwRwRegFieldBit }
+            TXDONE { RwRwRegFieldBit }
+            RFIDLE { RwRwRegFieldBit }
+            CSP_MANINT { RwRwRegFieldBit }
+            CSP_STOP { RwRwRegFieldBit }
+            CSP_WAIT { RwRwRegFieldBit }
+        }
+        RFIRQF0 {
+            0x20 RwReg;
+            ACT_UNUSED { RwRwRegFieldBit }
+            SFD { RwRwRegFieldBit }
+            FIFOP { RwRwRegFieldBit }
+            SRC_MATCH_DONE { RwRwRegFieldBit }
+            SRC_MATCH_FOUND { RwRwRegFieldBit }
+            FRAME_ACCEPTED { RwRwRegFieldBit }
+            RXPKTDONE { RwRwRegFieldBit }
+            RXMASKZERO { RwRwRegFieldBit }
+        }
+        RFST {
+            0x20 RwReg;
+            INSTR { RwRwRegFieldBits }
+        }
+    }
+
+    CCTEST {
+        IO {
+            0x20 RwReg;
+            SC { RwRwRegFieldBit }
+        }
+        OBSSEL0 {
+            0x20 RwReg;
+            SEL { RwRwRegFieldBits }
+            EN { RwRwRegFieldBit }
+        }
+        OBSSEL1 {
+            0x20 RwReg;
+            SEL { RwRwRegFieldBits }
+            EN { RwRwRegFieldBit }
+        }
+        OBSSEL2 {
+            0x20 RwReg;
+            SEL { RwRwRegFieldBits }
+            EN { RwRwRegFieldBit }
+        }
+        OBSSEL3 {
+            0x20 RwReg;
+            SEL { RwRwRegFieldBits }
+            EN { RwRwRegFieldBit }
+        }
+        OBSSEL4 {
+            0x20 RwReg;
+            SEL { RwRwRegFieldBits }
+            EN { RwRwRegFieldBit }
+        }
+        OBSSEL5 {
+            0x20 RwReg;
+            SEL { RwRwRegFieldBits }
+            EN { RwRwRegFieldBit }
+        }
+        OBSSEL6 {
+            0x20 RwReg;
+            SEL { RwRwRegFieldBits }
+            EN { RwRwRegFieldBit }
+        }
+        OBSSEL7 {
+            0x20 RwReg;
+            SEL { RwRwRegFieldBits }
+            EN { RwRwRegFieldBit }
+        }
+        TR0 {
+            0x20 RwReg;
+            ADCTM { RwRwRegFieldBit }
+        }
+        USBCTRL {
+            0x20 RwReg;
+            USB_STB { RwRwRegFieldBit }
+        }
+    }
+
+    ANA_REGS {
+        IVCTRL {
+            0x20 RwReg;
+            PA_BIAS_CTRL { RwRwRegFieldBits }
+            TXMIX_DC_CTRL { RwRwRegFieldBit }
+            LODIV_BIAS_CTRL { RwRwRegFieldBit }
+            DAC_CURR_CTRL { RwRwRegFieldBits }
+        }
+    }
 }
 
 #[allow(unused_macros)]
@@ -579,7 +685,11 @@ macro_rules! map_radio {
         $radio_macro:ident,
         $radio_ty_doc:expr,
         $radio_ty:ident,
-        $radio:ident,
+        $radio_ffsm:ident,
+        $radio_xreg:ident,
+        $radio_sfr:ident,
+        $radio_cctest:ident,
+        $radio_ana_regs:ident,
     ) => {
         periph::map! {
             #[doc = $radio_macro_doc]
@@ -594,7 +704,7 @@ macro_rules! map_radio {
             crate;
 
             RFCORE_FFSM {
-                $radio;
+                $radio_ffsm;
                 SRCRESMASK0 {
                     SRCRESMASK0;
                     SRCRESMASK0 { SRCRESMASK0 }
@@ -686,7 +796,7 @@ macro_rules! map_radio {
             }
 
             RFCORE_XREG {
-                RFCORE_XREG;
+                $radio_xreg;
                 FRMFILT0 {
                     FRMFILT0;
                     FRAME_FILTER_EN { FRAME_FILTER_EN }
@@ -1155,15 +1265,128 @@ macro_rules! map_radio {
                     FC { FC }
                 }
             }
+
+            RFCORE_SFR {
+                $radio_sfr;
+                RFDATA {
+                    RFDATA;
+                    RFD { RFD }
+                }
+                RFERRF {
+                    RFERRF;
+                    NLOCK { NLOCK }
+                    RXABO { RXABO }
+                    RXOVERF { RXOVERF }
+                    RXUNDERF { RXUNDERF }
+                    TXOVERF { TXOVERF }
+                    TXUNDERF { TXUNDERF }
+                    STROBEERR { STROBEERR }
+                }
+                RFIRQF1 {
+                    RFIRQF1;
+                    TXACKDONE { TXACKDONE }
+                    TXDONE { TXDONE }
+                    RFIDLE { RFIDLE }
+                    CSP_MANINT { CSP_MANINT }
+                    CSP_STOP { CSP_STOP }
+                    CSP_WAIT { CSP_WAIT }
+                }
+                RFIRQF0 {
+                    RFIRQF0;
+                    ACT_UNUSED { ACT_UNUSED }
+                    SFD { SFD }
+                    FIFOP { FIFOP }
+                    SRC_MATCH_DONE { SRC_MATCH_DONE }
+                    SRC_MATCH_FOUND { SRC_MATCH_FOUND }
+                    FRAME_ACCEPTED { FRAME_ACCEPTED }
+                    RXPKTDONE { RXPKTDONE }
+                    RXMASKZERO { RXMASKZERO }
+                }
+                RFST {
+                    RFST;
+                    INSTR { INSTR }
+                }
+            }
+
+            CCTEST {
+                $radio_cctest;
+                IO {
+                    IO;
+                    SC { SC }
+                }
+                OBSSEL0 {
+                    OBSSEL0;
+                    SEL { SEL }
+                    EN { EN }
+                }
+                OBSSEL1 {
+                    OBSSEL1;
+                    SEL { SEL }
+                    EN { EN }
+                }
+                OBSSEL2 {
+                    OBSSEL2;
+                    SEL { SEL }
+                    EN { EN }
+                }
+                OBSSEL3 {
+                    OBSSEL3;
+                    SEL { SEL }
+                    EN { EN }
+                }
+                OBSSEL4 {
+                    OBSSEL4;
+                    SEL { SEL }
+                    EN { EN }
+                }
+                OBSSEL5 {
+                    OBSSEL5;
+                    SEL { SEL }
+                    EN { EN }
+                }
+                OBSSEL6 {
+                    OBSSEL6;
+                    SEL { SEL }
+                    EN { EN }
+                }
+                OBSSEL7 {
+                    OBSSEL7;
+                    SEL { SEL }
+                    EN { EN }
+                }
+                TR0 {
+                    TR0;
+                    ADCTM { ADCTM }
+                }
+                USBCTRL {
+                    USBCTRL;
+                    USB_STB { USB_STB }
+                }
+            }
+
+            ANA_REGS {
+                $radio_ana_regs;
+                IVCTRL {
+                    IVCTRL;
+                    PA_BIAS_CTRL { PA_BIAS_CTRL }
+                    TXMIX_DC_CTRL { TXMIX_DC_CTRL }
+                    LODIV_BIAS_CTRL { LODIV_BIAS_CTRL }
+                    DAC_CURR_CTRL { DAC_CURR_CTRL }
+                }
+            }
         }
     };
 }
 
 #[cfg(tisl_mcu = "cc2538")]
 map_radio! {
-    "Extracts Radio Register tokens.",
+    "Extracts RF Core Register tokens.",
     periph_radio,
-    "Radio peipheral variant.",
-    RfCoreFfsm,
+    "RF Core peripheral variant.",
+    RfCore,
     RFCORE_FFSM,
+    RFCORE_XREG,
+    RFCORE_SFR,
+    CCTEST,
+    ANA_REGS,
 }
