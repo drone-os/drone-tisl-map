@@ -93,4 +93,14 @@ fn periph_macros1() {
     {
         let sysctrl = drone_tisl_map::periph::sysctrl::periph_sysctrl!(reg);
     }
+    #[cfg(all(
+        feature = "radio",
+        any(
+            tisl_mcu = "cc2538",
+        )
+    ))]
+    {
+        let radio = drone_tisl_map::periph::radio::periph_radio!(reg);
+    }
+
 }

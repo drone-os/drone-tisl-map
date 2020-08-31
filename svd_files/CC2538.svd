@@ -7013,13 +7013,6 @@
           <resetValue>0</resetValue>
           <fields>
             <field>
-              <name>FCF_RESERVED_MASK</name>
-              <description>Used for filtering on the reserved part of the frame control field (FCF) FCF_RESERVED_MASK[2:0] is ANDed with FCF[9:7]. If the result is nonzero and frame filtering is enabled, the frame is rejected.</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>3</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
               <name>MAX_FRAME_VERSION</name>
               <description>Used for filtering on the frame version field of the frame control field (FCF) If FCF[13:12] (the frame version subfield) is higher than MAX_FRAME_VERSION[1:0] and frame filtering is enabled, the frame is rejected. </description>
               <bitOffset>2</bitOffset>
@@ -7049,13 +7042,6 @@
           <size>32</size>
           <resetValue>0</resetValue>
           <fields>
-            <field>
-              <name>ACCEPT_FT_4TO7_RESERVED</name>
-              <description>Defines whether reserved frames are accepted or not. Reserved frames have frame type = 100, 101, 110, or 111. 0: Reject 1: Accept </description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
             <field>
               <name>ACCEPT_FT_3_MAC_CMD</name>
               <description>Defines whether MAC command frames are accepted or not. MAC command frames have frame type = 011. 0: Reject 1: Accept</description>
@@ -7089,13 +7075,6 @@
               <description>These bits are used to modify the frame type field of a received frame before frame type filtering is performed. The modification does not influence the frame that is written to the RX FIFO. 00: Leave the frame type as it is. 01: Invert MSB of the frame type. 10: Set MSB of the frame type to 0. 11: Set MSB of the frame type to 1. </description>
               <bitOffset>1</bitOffset>
               <bitWidth>2</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FRM_RESERVED</name>
-              <description>Reserved. Always write 0.</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
           </fields>
@@ -9074,6 +9053,7 @@
           <description>CSP Z data register</description>
           <addressOffset>0x190</addressOffset>
           <size>32</size>
+          <access>read-only</access>
           <resetValue>0</resetValue>
           <fields>
             <field>
