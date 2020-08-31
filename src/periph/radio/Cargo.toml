@@ -1,0 +1,30 @@
+cargo-features = ["resolver"]
+
+[package]
+name = "drone-tisl-map-periph-radio"
+version = "0.13.0"
+authors = ["Valentine Valyaeff <valentine.valyaeff@gmail.com>"]
+edition = "2018"
+resolver = "2"
+repository = "https://github.com/drone-os/drone-tisl-map"
+homepage = "https://www.drone-os.com/"
+documentation = "https://api.drone-os.com/drone-tisal-map/0.12/drone_tisl_map_periph_sysctrl/"
+license = "MIT OR Apache-2.0"
+description = """
+TI(TM) peripheral mappings for Drone, an Embedded Operating System.
+"""
+
+[lib]
+path = "lib.rs"
+
+[dependencies.drone-core]
+version = "0.13.0"
+path = "../../../../drone-core"
+
+[dependencies.drone-cortexm]
+version = "0.13.0"
+path = "../../../../drone-cortexm"
+
+[dependencies.drone-tisl-map-pieces]
+version = "0.13.0"
+path = "../../pieces"
