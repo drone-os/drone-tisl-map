@@ -12,7 +12,7 @@ Add the crate to your `Cargo.toml` dependencies:
 
 ```toml
 [dependencies]
-drone-tisl-map = { version = "0.12.0", features = [...] }
+drone-tisl-map = { version = "0.13.0", features = [...] }
 ```
 
 Add or extend `std` feature as follows:
@@ -21,6 +21,16 @@ Add or extend `std` feature as follows:
 [features]
 std = ["drone-tisl-map/std"]
 ```
+This crate uses CMSIS-SVD files based on TI CCS target db to automatically generate Drone register and interrupt bindings. However only the corresponding Product Specification is the single source of truth. A difference between this crate bindings and the Product Specification is considered a bug. Fixing such a bug is not a breaking change.
+## Supported Devices
+
+| `tisl_mcu`  | Core name             | Product specification                                                 | Available features  |
+|-------------|-----------------------|-----------------------------------------------------------------------|---------------------|
+| `cc2538`    | ARM® Cortex®-M3 r2p0  | [SWRU319C](https://www.ti.com/lit/ug/swru319c/swru319c.pdf) | `gpio` `ioc` `sysctrl` `tim` `uart` |
+
+
+`tisl_mcu` config flag should be set at the application level according to
+this table.
 
 ## License
 
