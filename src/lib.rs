@@ -7,7 +7,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! drone-tisl-map = { version = "0.12.0", features = [...] }
+//! drone-tisl-map = { version = "0.12.1", features = [...] }
 //! ```
 //!
 //! Add or extend `std` feature as follows:

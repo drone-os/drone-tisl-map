@@ -1,7 +1,6 @@
 //! Texas Instruments SimpleLink™ SVD to bindings for Drone, an Embedded
 //! Operating System.
 
-#![feature(str_strip)]
 #![warn(missing_docs)]
 #![warn(clippy::pedantic)]
 #![allow(clippy::doc_markdown)]
@@ -32,13 +31,15 @@ pub fn generate_rest() -> Result<()> {
 }
 
 fn svd_config() -> Result<Config<'static>> {
-    Ok(Config::new("tisl_reg_tokens"))
+    let mut options = Config::new("tisl_reg_tokens");
+    options.bit_band(0x4000_0000..0x4010_0000);
+    Ok(options)
 }
 
 fn svd_deserialize() -> Result<Device> {
     drone_svd::rerun_if_env_changed();
     match env::var("CARGO_CFG_TISL_MCU")?.as_ref() {
-        "cc2538" => parse_svd("cc2538.svd"),
+        "cc2538" => parse_svd("CC2538.svd"),
         _ => bail!("invalid `tisl_mcu` cfg flag"),
     }
 }

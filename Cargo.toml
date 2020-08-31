@@ -16,12 +16,17 @@ members = [
     "src/pieces/10",
     "src/pieces/11",
     "src/pieces/12",
+    "src/periph/ioc",
+    "src/periph/gpio",
+    "src/periph/sysctrl",
+    "src/periph/tim",
+    "src/periph/uart",
 ]
 
 [package]
 name = "drone-tisl-map"
-version = "0.12.0"
-authors = ["Valentine Valyaeff <valentine.valyaeff@gmail.com>"]
+version = "0.13.0"
+authors = ["Alfred Keller <alfred.keller@centosa.ch"]
 edition = "2018"
 resolver = "2"
 exclude = ["/svd_files"]
@@ -39,15 +44,46 @@ maintenance = { status = "experimental" }
 [features]
 default = []
 std = ["drone-core/std", "drone-cortexm/std"]
+ioc = ["drone-tisl-map-periph-ioc"]
+gpio = ["drone-tisl-map-periph-gpio"]
+sysctrl = ["drone-tisl-map-periph-sysctrl"]
+tim = ["drone-tisl-map-periph-tim"]
+uart = ["drone-tisl-map-periph-uart"]
 
 [dependencies.drone-core]
-version = "0.12.0"
+version = "0.13.0"
 path = "../drone-core"
 
 [dependencies.drone-cortexm]
-version = "0.12.0"
+version = "0.13.0"
 path = "../drone-cortexm"
 
 [dependencies.drone-tisl-map-pieces]
-version = "=0.12.0"
+version = "0.13.0"
 path = "src/pieces"
+
+[dependencies.drone-tisl-map-periph-ioc]
+version = "0.13.0"
+path = "src/periph/ioc"
+optional = true
+
+[dependencies.drone-tisl-map-periph-gpio]
+version = "0.13.0"
+path = "src/periph/gpio"
+optional = true
+
+[dependencies.drone-tisl-map-periph-sysctrl]
+version = "0.13.0"
+path = "src/periph/sysctrl"
+optional = true
+
+[dependencies.drone-tisl-map-periph-tim]
+version = "0.13.0"
+path = "src/periph/tim"
+optional = true
+
+[dependencies.drone-tisl-map-periph-uart]
+version = "0.13.0"
+path = "src/periph/uart"
+optional = true
+

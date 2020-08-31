@@ -2,7 +2,7 @@ cortexm_core := 'cortexm4f_r0p1'
 tisl_mcu := 'cc2538'
 export DRONE_RUSTFLAGS := '--cfg cortexm_core="' + cortexm_core + '" ' + '--cfg tisl_mcu="' + tisl_mcu + '"'
 target := 'thumbv7em-none-eabihf'
-features := ''
+features := 'ioc gpio sysctrl tim uart'
 
 # Install dependencies
 deps:
@@ -44,13 +44,13 @@ readme:
 # Bump the versions
 version-bump version drone-core-version drone-cortexm-version drone-svd-version:
 	sed -i '/\[.*\]/h;/version = ".*"/{x;s/\[package\]/version = "{{version}}"/;t;x}' \
-		Cargo.toml src/pieces/*/Cargo.toml src/pieces/Cargo.toml svd/Cargo.toml
+		Cargo.toml src/pieces/*/Cargo.toml src/pieces/Cargo.toml src/periph/*/Cargo.toml svd/Cargo.toml
 	sed -i '/\[.*\]/h;/version = "=.*"/{x;s/\[.*drone-tisl-map-.*\]/version = "={{version}}"/;t;x}' \
-		Cargo.toml src/pieces/*/Cargo.toml src/pieces/Cargo.toml
+		Cargo.toml src/pieces/*/Cargo.toml src/pieces/Cargo.toml src/periph/*/Cargo.toml
 	sed -i '/\[.*\]/h;/version = ".*"/{x;s/\[.*drone-core\]/version = "{{drone-core-version}}"/;t;x}' \
-		Cargo.toml src/pieces/*/Cargo.toml src/pieces/Cargo.toml
+		Cargo.toml src/pieces/*/Cargo.toml src/pieces/Cargo.toml src/periph/*/Cargo.toml
 	sed -i '/\[.*\]/h;/version = ".*"/{x;s/\[.*drone-cortexm\]/version = "{{drone-cortexm-version}}"/;t;x}' \
-		Cargo.toml src/pieces/*/Cargo.toml src/pieces/Cargo.toml
+		Cargo.toml src/pieces/*/Cargo.toml src/pieces/Cargo.toml src/periph/*/Cargo.toml
 	sed -i '/\[.*\]/h;/version = ".*"/{x;s/\[.*drone-svd\]/version = "{{drone-svd-version}}"/;t;x}' \
 		svd/Cargo.toml
 	sed -i 's/\(drone-tisl-map.*\)version = "[^"]\+"/\1version = "{{version}}"/' \

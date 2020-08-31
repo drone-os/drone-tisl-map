@@ -2,7 +2,7 @@ cargo-features = ["resolver"]
 
 [package]
 name = "drone-tisl-map-pieces"
-version = "0.12.0"
+version = "0.13.0"
 authors = ["Valentine Valyaeff <valentine.valyaeff@gmail.com>"]
 edition = "2018"
 resolver = "2"
@@ -21,61 +21,61 @@ default = []
 bit-band = ["drone-cortexm/bit-band"]
 
 [dependencies.drone-core]
-version = "0.12.0"
+version = "0.13.0"
 path = "../../../drone-core"
 
 [dependencies.drone-cortexm]
-version = "0.12.0"
+version = "0.13.0"
 path = "../../../drone-cortexm"
 
 [dependencies.drone-tisl-map-pieces-1]
-version = "=0.12.0"
+version = "0.13.0"
 path = "1"
 
 [dependencies.drone-tisl-map-pieces-2]
-version = "=0.12.0"
+version = "0.13.0"
 path = "2"
 
 [dependencies.drone-tisl-map-pieces-3]
-version = "=0.12.0"
+version = "0.13.0"
 path = "3"
 
 [dependencies.drone-tisl-map-pieces-4]
-version = "=0.12.0"
+version = "0.13.0"
 path = "4"
 
 [dependencies.drone-tisl-map-pieces-5]
-version = "=0.12.0"
+version = "0.13.0"
 path = "5"
 
 [dependencies.drone-tisl-map-pieces-6]
-version = "=0.12.0"
+version = "0.13.0"
 path = "6"
 
 [dependencies.drone-tisl-map-pieces-7]
-version = "=0.12.0"
+version = "0.13.0"
 path = "7"
 
 [dependencies.drone-tisl-map-pieces-8]
-version = "=0.12.0"
+version = "0.13.0"
 path = "8"
 
 [dependencies.drone-tisl-map-pieces-9]
-version = "=0.12.0"
+version = "0.13.0"
 path = "9"
 
 [dependencies.drone-tisl-map-pieces-10]
-version = "=0.12.0"
+version = "0.13.0"
 path = "10"
 
 [dependencies.drone-tisl-map-pieces-11]
-version = "=0.12.0"
+version = "0.13.0"
 path = "11"
 
 [dependencies.drone-tisl-map-pieces-12]
-version = "=0.12.0"
+version = "0.13.0"
 path = "12"
 
 [build-dependencies.drone-tisl-map-svd]
-version = "=0.12.0"
+version = "0.13.0"
 path = "../../svd"

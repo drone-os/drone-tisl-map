@@ -2,7 +2,7 @@ cargo-features = ["resolver"]
 
 [package]
 name = "drone-tisl-map-pieces-3"
-version = "0.12.0"
+version = "0.13.0"
 authors = ["Valentine Valyaeff <valentine.valyaeff@gmail.com>"]
 edition = "2018"
 resolver = "2"
@@ -17,13 +17,14 @@ Operating System.
 path = "lib.rs"
 
 [dependencies.drone-core]
-version = "0.12.0"
+version = "0.13.0"
 path = "../../../../drone-core"
 
 [dependencies.drone-cortexm]
-version = "0.12.0"
+version = "0.13.0"
 path = "../../../../drone-cortexm"
+features = ["bit-band"]
 
 [build-dependencies.drone-tisl-map-svd]
-version = "=0.12.0"
+version = "0.13.0"
 path = "../../../svd"
