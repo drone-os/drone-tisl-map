@@ -102,12 +102,7 @@ periph! {
 
 #[allow(unused_macros)]
 macro_rules! map_ioc_selectors {
-    (
-        $sel_macro_doc:expr,
-        $sel_macro:ident,
-        $sel_ty_doc:expr,
-        $sel_ty:ident,
-    ) => {
+    ($sel_macro_doc:expr, $sel_macro:ident, $sel_ty_doc:expr, $sel_ty:ident,) => {
         periph::map! {
             #[doc = $sel_macro_doc]
             pub macro $sel_macro;
@@ -183,27 +178,27 @@ macro_rules! map_ioc_selectors {
                     INPUT_SEL { INPUT_SEL }
                 }
                 GPT1OCP1 {
-                    GPT1OCP1; 
+                    GPT1OCP1;
                     INPUT_SEL { INPUT_SEL }
                 }
                 GPT1OCP2 {
-                    GPT1OCP2; 
+                    GPT1OCP2;
                     INPUT_SEL { INPUT_SEL }
                 }
                 GPT2OCP1 {
-                    GPT2OCP1; 
+                    GPT2OCP1;
                     INPUT_SEL { INPUT_SEL }
                 }
                 GPT2OCP2 {
-                    GPT2OCP2; 
+                    GPT2OCP2;
                     INPUT_SEL { INPUT_SEL }
                 }
                 GPT3OCP1 {
-                    GPT3OCP1; 
+                    GPT3OCP1;
                     INPUT_SEL { INPUT_SEL }
                 }
                 GPT3OCP2 {
-                    GPT3OCP2; 
+                    GPT3OCP2;
                     INPUT_SEL { INPUT_SEL }
                 }
             }
