@@ -9,24 +9,14 @@ tisl_reg_tokens! {
 #[allow(unused_variables)]
 fn periph_macros1() {
     let reg = unsafe { Regs::take() };
-    #[cfg(all(
-        feature = "gpio",
-        any(
-            tisl_mcu = "cc2538",
-        )
-    ))]
+    #[cfg(all(feature = "gpio", any(tisl_mcu = "cc2538",)))]
     {
         let gpio_a = drone_tisl_map::periph::gpio::periph_gpio_a!(reg);
         let gpio_b = drone_tisl_map::periph::gpio::periph_gpio_b!(reg);
         let gpio_c = drone_tisl_map::periph::gpio::periph_gpio_c!(reg);
         let gpio_d = drone_tisl_map::periph::gpio::periph_gpio_d!(reg);
     }
-    #[cfg(all(
-        feature = "ioc",
-        any(
-            tisl_mcu = "cc2538",
-        )
-    ))]
+    #[cfg(all(feature = "ioc", any(tisl_mcu = "cc2538",)))]
     {
         let ioc_a0 = drone_tisl_map::periph::ioc::periph_ioc_a0!(reg);
         let ioc_a1 = drone_tisl_map::periph::ioc::periph_ioc_a1!(reg);
@@ -62,45 +52,29 @@ fn periph_macros1() {
         let ioc_d7 = drone_tisl_map::periph::ioc::periph_ioc_d7!(reg);
         let ioc_selectors = drone_tisl_map::periph::ioc::periph_ioc_selectors!(reg);
     }
-    #[cfg(all(
-        feature = "uart",
-        any(
-            tisl_mcu = "cc2538",
-        )
-    ))]
+    #[cfg(all(feature = "uart", any(tisl_mcu = "cc2538",)))]
     {
         let uart0 = drone_tisl_map::periph::uart::periph_uart0!(reg);
         let uart1 = drone_tisl_map::periph::uart::periph_uart1!(reg);
     }
-     #[cfg(all(
-        feature = "tim",
-        any(
-            tisl_mcu = "cc2538",
-        )
-    ))]
+    #[cfg(all(feature = "tim", any(tisl_mcu = "cc2538",)))]
     {
         let tim0 = drone_tisl_map::periph::tim::periph_gptimer0!(reg);
         let tim1 = drone_tisl_map::periph::tim::periph_gptimer1!(reg);
         let tim2 = drone_tisl_map::periph::tim::periph_gptimer2!(reg);
         let tim3 = drone_tisl_map::periph::tim::periph_gptimer3!(reg);
     }
-    #[cfg(all(
-        feature = "sysctrl",
-        any(
-            tisl_mcu = "cc2538",
-        )
-    ))]
+    #[cfg(all(feature = "sysctrl", any(tisl_mcu = "cc2538",)))]
     {
         let sysctrl = drone_tisl_map::periph::sysctrl::periph_sysctrl!(reg);
     }
-    #[cfg(all(
-        feature = "radio",
-        any(
-            tisl_mcu = "cc2538",
-        )
-    ))]
+    #[cfg(all(feature = "radio", any(tisl_mcu = "cc2538",)))]
     {
         let radio = drone_tisl_map::periph::radio::periph_radio!(reg);
     }
-
+    #[cfg(all(feature = "radio", any(tisl_mcu = "cc2538",)))]
+    {
+        let ssi0 = drone_tisl_map::periph::ssi::periph_ssi0!(reg);
+        let ssi1 = drone_tisl_map::periph::ssi::periph_ssi1!(reg);
+    }
 }

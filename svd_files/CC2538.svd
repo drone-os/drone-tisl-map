@@ -136,6 +136,7 @@
           <addressOffset>0xc</addressOffset>
           <size>32</size>
           <resetValue>0</resetValue>
+          <access>read-only</access>
           <fields>
             <field>
               <name>BSY</name>
@@ -486,6 +487,7 @@
           <addressOffset>0xc</addressOffset>
           <size>32</size>
           <resetValue>0</resetValue>
+          <access>read-only</access>
           <fields>
             <field>
               <name>BSY</name>
