@@ -381,4 +381,3 @@ map_uart! {
     Uart1,
     UART1,
 }
-

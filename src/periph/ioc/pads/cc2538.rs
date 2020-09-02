@@ -64,13 +64,13 @@ macro_rules! map_ioc_pad {
                     $(
                         $pad_over_bits_reg Option;
                         PAD_OVER_BITS { $pad_over_bits }
-                    )* 
+                    )*
                 }
                 PAD_OVER_BIT {
                     $(
                         $pad_over_bit_reg Option;
                         PAD_OVER_BIT { $pad_over_bit }
-                    )* 
+                    )*
                 }
             }
         }
@@ -168,7 +168,7 @@ macro_rules! map_ioc_pads_a {
             (PA7_OVER, PA7_over),
             (, PA7_over),
         }
-    }
+    };
 }
 
 #[allow(unused_macros)]
@@ -262,7 +262,7 @@ macro_rules! map_ioc_pads_b {
             (PB7_OVER, PB7_over),
             (, PB7_over),
         }
-    }
+    };
 }
 
 #[allow(unused_macros)]
@@ -356,7 +356,7 @@ macro_rules! map_ioc_pads_c {
             (PC7_OVER, PC7_over),
             (, PC7_over),
         }
-    }
+    };
 }
 
 #[allow(unused_macros)]
@@ -450,13 +450,13 @@ macro_rules! map_ioc_pads_d {
             (PD7_OVER, PD7_over),
             (, PD7_over),
         }
-    }
+    };
 }
 
-map_ioc_pads_a! {} 
+map_ioc_pads_a! {}
 
-map_ioc_pads_b! {} 
+map_ioc_pads_b! {}
 
-map_ioc_pads_c! {} 
+map_ioc_pads_c! {}
 
-map_ioc_pads_d! {} 
+map_ioc_pads_d! {}

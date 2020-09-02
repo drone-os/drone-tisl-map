@@ -218,13 +218,7 @@ periph! {
 
 #[allow(unused_macros)]
 macro_rules! map_gpio_port {
-    (
-        $port_macro_doc:expr,
-        $port_macro:ident,
-        $port_ty_doc:expr,
-        $port_ty:ident,
-        $gpio:ident,
-    ) => {
+    ($port_macro_doc:expr, $port_macro:ident, $port_ty_doc:expr, $port_ty:ident, $gpio:ident,) => {
         periph::map! {
             #[doc = $port_macro_doc]
             pub macro $port_macro;
@@ -474,4 +468,3 @@ map_gpio_port! {
     GpioD,
     GPIO_D,
 }
-

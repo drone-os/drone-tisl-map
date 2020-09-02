@@ -22,6 +22,7 @@ members = [
     "src/periph/sysctrl",
     "src/periph/tim",
     "src/periph/uart",
+    "src/periph/ssi",
 ]
 
 [package]
@@ -51,6 +52,7 @@ sysctrl = ["drone-tisl-map-periph-sysctrl"]
 tim = ["drone-tisl-map-periph-tim"]
 uart = ["drone-tisl-map-periph-uart"]
 radio = ["drone-tisl-map-periph-radio"]
+ssi = ["drone-tisl-map-periph-ssi"]
 
 [dependencies.drone-core]
 version = "0.13.0"
@@ -92,4 +94,9 @@ optional = true
 [dependencies.drone-tisl-map-periph-radio]
 version = "0.13.0"
 path = "src/periph/radio"
+optional = true
+
+[dependencies.drone-tisl-map-periph-ssi]
+version = "0.13.0"
+path = "src/periph/ssi"
 optional = true
