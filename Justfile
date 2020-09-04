@@ -2,7 +2,7 @@ cortexm_core := 'cortexm4f_r0p1'
 tisl_mcu := 'cc2538'
 export DRONE_RUSTFLAGS := '--cfg cortexm_core="' + cortexm_core + '" ' + '--cfg tisl_mcu="' + tisl_mcu + '"'
 target := 'thumbv7em-none-eabihf'
-features := 'ioc gpio sysctrl tim uart radio'
+features := 'ioc gpio sysctrl tim uart radio ssi'
 
 # Install dependencies
 deps:

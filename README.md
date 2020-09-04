@@ -26,7 +26,7 @@ This crate uses CMSIS-SVD files based on TI CCS target db to automatically gener
 
 | `tisl_mcu`  | Core name             | Product specification                                                 | Available features  |
 |-------------|-----------------------|-----------------------------------------------------------------------|---------------------|
-| `cc2538`    | ARM® Cortex®-M3 r2p0  | [SWRU319C](https://www.ti.com/lit/ug/swru319c/swru319c.pdf) | `gpio` `ioc` `sysctrl` `tim` `uart` |
+| `cc2538`    | ARM® Cortex®-M3 r2p0  | [SWRU319C](https://www.ti.com/lit/ug/swru319c/swru319c.pdf) | `gpio` `ioc` `sysctrl` `tim` `uart` `radio` `ssi` |
 
 
 `tisl_mcu` config flag should be set at the application level according to

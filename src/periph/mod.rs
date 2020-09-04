@@ -3,12 +3,14 @@
 #[doc(no_inline)]
 pub use drone_cortexm::map::periph::*;
 
+#[cfg(feature = "gpio")]
+pub extern crate drone_tisl_map_periph_gpio as gpio;
 #[cfg(feature = "ioc")]
 pub extern crate drone_tisl_map_periph_ioc as ioc;
 #[cfg(feature = "radio")]
 pub extern crate drone_tisl_map_periph_radio as radio;
-#[cfg(feature = "gpio")]
-pub extern crate drone_tisl_map_periph_gpio as gpio;
+#[cfg(feature = "ssi")]
+pub extern crate drone_tisl_map_periph_ssi as ssi;
 #[cfg(feature = "sysctrl")]
 pub extern crate drone_tisl_map_periph_sysctrl as sysctrl;
 #[cfg(feature = "tim")]
