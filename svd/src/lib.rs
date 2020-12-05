@@ -2,7 +2,7 @@
 //! Operating System.
 
 #![warn(clippy::pedantic)]
-#![allow(clippy::missing_errors_doc, clippy::unnecessary_wraps)]
+#![allow(clippy::doc_markdown, clippy::missing_errors_doc)]
 
 pub use anyhow::{bail, Result};
 

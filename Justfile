@@ -1,8 +1,8 @@
-cortexm_core := 'cortexm4f_r0p1'
+cortexm_core := 'cortexm3_r2p0'
 tisl_mcu := 'cc2538'
 export DRONE_RUSTFLAGS := '--cfg cortexm_core="' + cortexm_core + '" ' + '--cfg tisl_mcu="' + tisl_mcu + '"'
 target := 'thumbv7em-none-eabihf'
-features := 'ioc gpio sysctrl tim uart'
+features := 'gpio ioc sysctrl tim uart'
 
 # Install dependencies
 deps:
@@ -35,7 +35,7 @@ test:
 
 # Test all MCUs
 test-all:
-	DRONE_RUSTFLAGS='--cfg cortexm_core="cortexm4f_r0p1" --cfg tisl_mcu="cc2538"' drone env -- cargo test --package drone-tisl-map --features "{{features}} std"
+	DRONE_RUSTFLAGS='--cfg cortexm_core="cortexm3_r2p0" --cfg tisl_mcu="cc2538"' drone env -- cargo test --package drone-tisl-map --features "{{features}} std"
 
 # Update README.md
 readme:
@@ -74,5 +74,11 @@ publish:
 	cd src/pieces/12 && drone env {{target}} -- cargo publish
 	sleep 30
 	cd src/pieces && drone env {{target}} -- cargo publish
+	sleep 30
+	cd src/periph/gpio && drone env {{target}} -- cargo publish
+	cd src/periph/ioc && drone env {{target}} -- cargo publish
+	cd src/periph/sysctrl && drone env {{target}} -- cargo publish
+	cd src/periph/tim && drone env {{target}} -- cargo publish
+	cd src/periph/uart && drone env {{target}} -- cargo publish
 	sleep 30
 	drone env {{target}} -- cargo publish --features "{{features}}"
