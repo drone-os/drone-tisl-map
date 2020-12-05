@@ -31,15 +31,32 @@ edition = "2018"
 resolver = "2"
 exclude = ["/svd_files"]
 repository = "https://github.com/drone-os/drone-tisl-map"
+homepage = "https://www.drone-os.com/"
+documentation = "https://api.drone-os.com/drone-tisl-map/0.13/drone_tisl_map/"
 readme = "README.md"
 license = "MIT OR Apache-2.0"
+keywords = [
+    "ti",
+    "cc2538",
+    "cortex",
+    "arm",
+    "rtos",
+    "bare-metal",
+]
+categories = [
+    "embedded",
+    "asynchronous",
+    "concurrency",
+    "no-std",
+    "hardware-support",
+]
 description = """
 Texas Instruments SimpleLink™ peripheral mappings for Drone, an Embedded
 Operating System.
 """
 
 [badges]
-maintenance = { status = "experimental" }
+maintenance = { status = "actively-developed" }
 
 [features]
 default = []
@@ -68,22 +85,22 @@ path = "src/periph/ioc"
 optional = true
 
 [dependencies.drone-tisl-map-periph-gpio]
-version = "0.13.0"
+version = "=0.13.0"
 path = "src/periph/gpio"
 optional = true
 
 [dependencies.drone-tisl-map-periph-sysctrl]
-version = "0.13.0"
+version = "=0.13.0"
 path = "src/periph/sysctrl"
 optional = true
 
 [dependencies.drone-tisl-map-periph-tim]
-version = "0.13.0"
+version = "=0.13.0"
 path = "src/periph/tim"
 optional = true
 
 [dependencies.drone-tisl-map-periph-uart]
-version = "0.13.0"
+version = "=0.13.0"
 path = "src/periph/uart"
 optional = true
 

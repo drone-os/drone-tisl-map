@@ -2,7 +2,7 @@ use drone_core::token::Token;
 use drone_tisl_map::tisl_reg_tokens;
 
 tisl_reg_tokens! {
-    struct Regs;
+    index => pub Regs;
 }
 
 #[test]

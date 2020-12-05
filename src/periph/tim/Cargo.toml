@@ -26,5 +26,5 @@ version = "0.13.0"
 path = "../../../../drone-cortexm"
 
 [dependencies.drone-tisl-map-pieces]
-version = "0.13.0"
+version = "=0.13.0"
 path = "../../pieces"

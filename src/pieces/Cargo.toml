@@ -7,6 +7,8 @@ authors = ["Valentine Valyaeff <valentine.valyaeff@gmail.com>"]
 edition = "2018"
 resolver = "2"
 repository = "https://github.com/drone-os/drone-tisl-map"
+homepage = "https://www.drone-os.com/"
+documentation = "https://api.drone-os.com/drone-tisl-map/0.13/drone_tisl_map_pieces/"
 license = "MIT OR Apache-2.0"
 description = """
 Texas Instruments SimpleLink™ peripheral mappings for Drone, an Embedded
@@ -15,10 +17,6 @@ Operating System.
 
 [lib]
 path = "lib.rs"
-
-[features]
-default = []
-bit-band = ["drone-cortexm/bit-band"]
 
 [dependencies.drone-core]
 version = "0.13.0"
@@ -29,53 +27,53 @@ version = "0.13.0"
 path = "../../../drone-cortexm"
 
 [dependencies.drone-tisl-map-pieces-1]
-version = "0.13.0"
+version = "=0.13.0"
 path = "1"
 
 [dependencies.drone-tisl-map-pieces-2]
-version = "0.13.0"
+version = "=0.13.0"
 path = "2"
 
 [dependencies.drone-tisl-map-pieces-3]
-version = "0.13.0"
+version = "=0.13.0"
 path = "3"
 
 [dependencies.drone-tisl-map-pieces-4]
-version = "0.13.0"
+version = "=0.13.0"
 path = "4"
 
 [dependencies.drone-tisl-map-pieces-5]
-version = "0.13.0"
+version = "=0.13.0"
 path = "5"
 
 [dependencies.drone-tisl-map-pieces-6]
-version = "0.13.0"
+version = "=0.13.0"
 path = "6"
 
 [dependencies.drone-tisl-map-pieces-7]
-version = "0.13.0"
+version = "=0.13.0"
 path = "7"
 
 [dependencies.drone-tisl-map-pieces-8]
-version = "0.13.0"
+version = "=0.13.0"
 path = "8"
 
 [dependencies.drone-tisl-map-pieces-9]
-version = "0.13.0"
+version = "=0.13.0"
 path = "9"
 
 [dependencies.drone-tisl-map-pieces-10]
-version = "0.13.0"
+version = "=0.13.0"
 path = "10"
 
 [dependencies.drone-tisl-map-pieces-11]
-version = "0.13.0"
+version = "=0.13.0"
 path = "11"
 
 [dependencies.drone-tisl-map-pieces-12]
-version = "0.13.0"
+version = "=0.13.0"
 path = "12"
 
 [build-dependencies.drone-tisl-map-svd]
-version = "0.13.0"
+version = "=0.13.0"
 path = "../../svd"

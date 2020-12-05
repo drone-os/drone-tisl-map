@@ -7,6 +7,8 @@ authors = ["Valentine Valyaeff <valentine.valyaeff@gmail.com>"]
 edition = "2018"
 resolver = "2"
 repository = "https://github.com/drone-os/drone-tisl-map"
+homepage = "https://www.drone-os.com/"
+documentation = "https://api.drone-os.com/drone-tisl-map/0.13/drone_tisl_map_pieces_11/"
 license = "MIT OR Apache-2.0"
 description = """
 Texas Instruments SimpleLink™ peripheral mappings for Drone, an Embedded
@@ -26,5 +28,5 @@ path = "../../../../drone-cortexm"
 features = ["bit-band"]
 
 [build-dependencies.drone-tisl-map-svd]
-version = "0.13.0"
+version = "=0.13.0"
 path = "../../../svd"
