@@ -40,7 +40,6 @@ keywords = [
     "cc2538",
     "cortex",
     "arm",
-    "rtos",
     "bare-metal",
 ]
 categories = [
